@@ -3,6 +3,7 @@ const dbOperations = require('../helpers/dbOperations');
 const redirect = async(request, h) => {
 	try{
 		const id = request.params.id;
+		console.log(id);
 		const [url,code] = await dbOperations.getURL(id);
 		if(!url){
 			return h.response('Not Found').code(404);
@@ -12,7 +13,7 @@ const redirect = async(request, h) => {
 		}
 		return h.redirect(url).code(302);
 	} catch(err){
-		return h.response('Internal server error').code(500);
+		return h.response(err.message).code(500);
 	}
 };
 

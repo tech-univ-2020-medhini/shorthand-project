@@ -6,7 +6,7 @@ const postRoute = async(request, h) => {
 		const id = await dbOperations.generateId(url);
 		return h.response(`ShortURL created localhost:8080/${id}. Valid for 30 minutes`).code(200);
 	} catch(err){
-		return h.response('Internal server error').code(500);
+		return h.response(err.message).code(500);
 	}
 	
 };

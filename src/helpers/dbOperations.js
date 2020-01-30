@@ -7,12 +7,14 @@ const getURL = async(id) => {
 			id: id,
 		}
 	});
-	return response.url;
+	console.log(response, id);
+	return response.dataValues.url;
 };
 
 const generateId = async(url) => {
 	const id = shortid.generate();
-	await db.routes.create({url: url, id: id, time: Date(Date.now())});
+	const time = Date.now();
+	await db.routes.create({url: url, id: id, time: time.toString});
 	return id;
 };
 
