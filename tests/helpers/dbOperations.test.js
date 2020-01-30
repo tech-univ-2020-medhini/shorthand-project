@@ -13,9 +13,9 @@ describe('The db operations', () => {
 	describe('The get url function',() => {
 		it('Should return the url when corresponding id is passed', async() => {
 			const mockDb = jest.spyOn(db.routes, 'findOne');
-			mockDb.mockResolvedValue({url:'google.com'});
+			mockDb.mockResolvedValue({dataValues: {url:'google.com'}});
 			const result = await getURL(123);
-			expect(typeof result).toBe('string');
+			expect(result).toBeInstanceOf(Array);
 			expect(mockDb).toHaveBeenCalled();
 		});
 	});

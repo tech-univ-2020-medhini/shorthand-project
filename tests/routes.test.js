@@ -1,4 +1,6 @@
 const buildServer = require('../src/server');
+const db = require('../models/index');
+
 describe('The server ', () => {
 	let server;
 
@@ -15,18 +17,20 @@ describe('The server ', () => {
 	it('Should should return the correct status code when get is called with the right url', async (done) =>{
 		const injectOptions = {
 			method: 'GET',
-			url: '/2162440f-cbcb-4f92-b470-59b6e7a7ded8',
+			url: '/RMO7rRDN',
 		};
+		
 		const response = await server.inject(injectOptions);
+		console.log(response);
 		expect(response.statusCode).toEqual(200);
 		done();
 	});
-	it('Should should return the correct status code when get is called with the right url', async (done) =>{
+	xit('Should should return the correct status code when get is called with the right url', async (done) =>{
 		const injectOptions = {
 			method: 'POST',
 			url: '/route',
 			payload: {
-				'url': 'github',
+				url: 'github.com',
 			},
 		};
 		const response = await server.inject(injectOptions);
