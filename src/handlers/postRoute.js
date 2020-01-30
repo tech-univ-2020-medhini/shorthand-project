@@ -1,3 +1,5 @@
+const dbOperations = require('../helpers/dbOperations');
+
 const postRoute = async(request, h) => {
 	try{
 		const url = request.payload.url;

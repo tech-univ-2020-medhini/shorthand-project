@@ -37,7 +37,7 @@ describe('The redirect handler', () => {
 		mockDb.mockResolvedValue([null,null]);
 		redirect(mockReq,mockH);
 		expect(mockDb).toHaveBeenCalledWith(mockReq.params.id);
-		expect(mockH.response).toHaveBeenCalledWith('Not found');
+		expect(mockH.response).toHaveBeenCalledWith('Not Found');
 		expect(mockCode).toHaveBeenCalledWith(404);
 	});
 	it ('Should return 410 GONE if the url is requested after 30 min', () => {
