@@ -2,7 +2,12 @@ const db = require('../../models/index');
 const shortid = require('shortid');
 
 const getURL = async(id) => {
-
+	const response = await db.routes.findOne({
+		where: {
+			id: id,
+		}
+	});
+	return response.url;
 };
 
 const generateId = async(url) => {
