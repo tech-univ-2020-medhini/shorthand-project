@@ -7,11 +7,9 @@ const redirect = async(request, h) => {
 		if(!url){
 			return h.response('Not Found').code(404);
 		}
-		
 		if(!code){
 			return h.response('GONE').code(410);
 		}
-		
 		return h.redirect(url).code(301);
 	} catch(err){
 		return h.response(err.message).code(500);

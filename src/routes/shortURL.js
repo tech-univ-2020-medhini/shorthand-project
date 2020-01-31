@@ -1,4 +1,11 @@
 const redirectHandler = require('../handlers/redirect');
-const routes = [{path: '/{id}', method: 'GET', handler: redirectHandler}];
+const {postRouteSchema,redirectSchema} = require('../schemas/schemas');
+const routes = [{path: '/{id}', method: 'GET',  config: {
+	handler: redirectHandler,
+	validate: {
+		params: redirectSchema,
+	},  
+},
+}];
 
 module.exports = routes;
