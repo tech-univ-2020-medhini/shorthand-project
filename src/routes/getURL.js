@@ -1,4 +1,4 @@
-const redirectHandler = require('../handlers/redirect');
+const redirectHandler = require('../handlers/getURL');
 const {postRouteSchema,redirectSchema} = require('../schemas/schemas');
 const routes = [{path: '/{id}', method: 'GET',  config: {
 	handler: redirectHandler,

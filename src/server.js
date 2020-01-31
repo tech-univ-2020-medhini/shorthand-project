@@ -8,7 +8,7 @@ const buildServer = async () => {
 		port: 8080,
 	});
 	server.route(routes);
-	//await server.validator(Joi);
+	await server.validator(Joi);
 	return server;
 };
 

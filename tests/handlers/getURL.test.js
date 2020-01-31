@@ -1,4 +1,4 @@
-const redirect = require('../../src/handlers/redirect');
+const redirect = require('../../src/handlers/getURL');
 const dbOperation = require('../../src/helpers/dbOperations');
 
 describe('The redirect handler', () => {
