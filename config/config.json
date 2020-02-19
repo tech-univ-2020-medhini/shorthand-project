@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "Medhini_Oak",
-    "password": null,
+    "username": "postgres",
+    "password": "qwerty",
     "database": "router",
     "host": "127.0.0.1",
     "dialect": "postgres",
