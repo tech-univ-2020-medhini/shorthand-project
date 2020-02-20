@@ -5,7 +5,10 @@ const routes = [{path: '/{id}', method: 'GET',  config: {
 	validate: {
 		params: redirectSchema,
 	},  
-},
-}];
+}},
+{
+	path: '/ping', method: 'GET',  handler: () => 'pong',
+}
+];
 
 module.exports = routes;

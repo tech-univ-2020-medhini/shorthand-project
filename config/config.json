@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "qwerty",
     "database": "router",
-    "host": "127.0.0.1",
+    "host": "postgres",
     "dialect": "postgres",
     "operatorsAliases": false
   },
